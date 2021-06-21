@@ -15,7 +15,7 @@ The server was written in JavaScript(Node.js) and the client was written mainly 
 
 
 #### App Usage
-<img src = "https://user-images.githubusercontent.com/56928005/122680089-54374380-d1f6-11eb-914b-263b1a7a26a8.PNG">
+<img src = "https://user-images.githubusercontent.com/58342591/122798489-54544380-d2c9-11eb-8534-4f44c4f084cf.png">
 As we can see, you have the joystick itself , the left seek bar that represents the throttle value, and the lower seek bar that represents the rudder.
 
 #### Connecting to the flightgear
