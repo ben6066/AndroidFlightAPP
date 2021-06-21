@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
             }
 
             override fun onStartTrackingTouch(seek: SeekBar) {
-                // write custom code for progress is started
+                
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
