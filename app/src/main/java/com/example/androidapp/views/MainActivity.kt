@@ -11,16 +11,16 @@ import com.example.androidapp.view_model.ViewModel
 
 
 class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
-    var viewModel: ViewModel? = null
-    var Model: FGPlayer?= null
-    var ip: EditText? = null
-    var port: EditText? = null
-    var resetButton:Button? = null
-    var connectionButton:Button? = null
-    var throttleBar: SeekBar? = null
-    var rudderBar: SeekBar? = null
-    var joystick : JoystickView?= null
-    var engine_start : ImageButton?= null
+    private var viewModel: ViewModel? = null
+    private var Model: FGPlayer?= null
+    private var ip: EditText? = null
+    private var port: EditText? = null
+    private var resetButton:Button? = null
+    private var connectionButton:Button? = null
+    private var throttleBar: SeekBar? = null
+    private var rudderBar: SeekBar? = null
+    private var joystick : JoystickView?= null
+    private var engine_start : ImageButton?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
             }
 
             override fun onStartTrackingTouch(seek: SeekBar) {
-                
+
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
