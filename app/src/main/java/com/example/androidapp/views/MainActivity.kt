@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
     }
 
     override fun onJoystickMoved(xPercent: Float, yPercent: Float) {
-        viewModel?.VM_Elevator = yPercent * -1
+        viewModel?.VM_Elevator = yPercent * (-1)
         viewModel?.VM_Aileron = xPercent
     }
 }
