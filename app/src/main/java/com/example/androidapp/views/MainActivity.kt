@@ -3,10 +3,7 @@ package com.example.androidapp.views
 import android.app.Activity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.SeekBar
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidapp.R
 import com.example.androidapp.model.FGPlayer
@@ -23,6 +20,7 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
     var throttleBar: SeekBar? = null
     var rudderBar: SeekBar? = null
     var joystick : JoystickView?= null
+    var engine_start : ImageButton?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +34,10 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
         rudderBar = findViewById(R.id.rudderBar)
         Model = FGPlayer()
         viewModel = ViewModel(Model!!);
+        engine_start = findViewById(R.id.engine_start)
         connect()
         resetConnectionData()
+        startEngine()
 
         rudderBar?.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
@@ -92,6 +92,12 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
 
             //Call VM with ip and port
             viewModel?.VM_Connect(ip?.text.toString(), (port?.text.toString()))
+        }
+    }
+
+    private fun startEngine(){
+        engine_start?.setOnClickListener{
+            viewModel?.VM_startEngine()
         }
     }
 

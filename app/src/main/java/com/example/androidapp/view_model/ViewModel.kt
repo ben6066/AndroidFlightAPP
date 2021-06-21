@@ -31,7 +31,11 @@ class ViewModel (Model: FGPlayer){
             myModel.Aileron = value
         }
 
-    public fun VM_Connect(ip: String, port: String){
-        myModel.connect(ip, port);
+    fun VM_Connect(ip: String, port: String){
+        myModel.connect(ip, port)
+    }
+
+    fun VM_startEngine(){
+        myModel.startEngine()
     }
 }
