@@ -17,7 +17,6 @@ Those features invoke the airplane in the flight gear application.</br>
 1. Run FlightGear.exe and wait for it to load (until you see the airplane). Change the view by clicking ```V``` multiple times.
 2. In the "Insert IP" edit text, insert your IP (the one you found following the ```ipconfig``` command) and the insert 6400 as the port.
 3. Click the "Connect" button and move the left and bottom sliders in order to check the app is connected to the simulator.
-4. You will hear the engine start working, then you can start raising a little bit the throttle slide.
 
 ## App Usage - Flying the plane
 <img src = "https://user-images.githubusercontent.com/58342591/122798489-54544380-d2c9-11eb-8534-4f44c4f084cf.png">
