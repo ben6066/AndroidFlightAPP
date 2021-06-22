@@ -21,9 +21,9 @@ Those features invoke the airplane in the flight gear application.</br>
 ## App Usage - Flying the plane
 <img src = "https://user-images.githubusercontent.com/58342591/122798489-54544380-d2c9-11eb-8534-4f44c4f084cf.png">
 As seen above, there is a joystick, a seek bar that represents the throttle (the left one), and the lower seek bar that represents the rudder.
-We also added a "Start" button, instead of clicking "Auto Start" on the flightgear application.
+ We also added a "Start" button, instead of clicking "Auto Start" on the flightgear application.
 
-After the application is connected to the flightgear, press the "Start" button, and the plane will move a bit.
+After the application is connected to the flightgear, press the "Start" button, and the plane will move a bit.</br>
 You can start playing with the throttle and the rudder in order to start moving on the runway, and when you reached a high speed, lift the plane by dragging the inner circle of the joystick down.
 
 ### Project Structure
