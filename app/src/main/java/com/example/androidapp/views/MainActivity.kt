@@ -6,13 +6,11 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidapp.R
-import com.example.androidapp.model.FGPlayer
 import com.example.androidapp.view_model.ViewModel
 
 
 class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
     private var viewModel: ViewModel? = null
-    private var Model: FGPlayer?= null
     private var ip: EditText? = null
     private var port: EditText? = null
     private var resetButton:Button? = null
@@ -20,21 +18,20 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
     private var throttleBar: SeekBar? = null
     private var rudderBar: SeekBar? = null
     private var joystick : JoystickView?= null
-    private var engine_start : ImageButton?= null
+    private var engineStartButton : ImageButton?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         joystick = JoystickView(this)
         setContentView(R.layout.activity_main)
-        ip = findViewById(R.id.ip);
-        port = findViewById(R.id.port);
+        ip = findViewById(R.id.ip)
+        port = findViewById(R.id.port)
         connectionButton = findViewById(R.id.connect_btn)
-        resetButton = findViewById(R.id.resetButton);
+        resetButton = findViewById(R.id.resetButton)
         throttleBar = findViewById(R.id.throttleBar)
         rudderBar = findViewById(R.id.rudderBar)
-        Model = FGPlayer()
-        viewModel = ViewModel(Model!!);
-        engine_start = findViewById(R.id.engine_start)
+        viewModel = ViewModel()
+        engineStartButton = findViewById(R.id.engine_start)
         connect()
         resetConnectionData()
         startEngine()
@@ -43,8 +40,8 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
                                            progress: Int, fromUser: Boolean) {
-                var progressAsFloat = progress.toFloat()
-                var translatedProgress = (progressAsFloat - 50) / 50
+                val progressAsFloat = progress.toFloat()
+                val translatedProgress = (progressAsFloat - 50) / 50
                 viewModel!!.VM_Rudder = translatedProgress
             }
 
@@ -61,8 +58,8 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
                                            progress: Int, fromUser: Boolean) {
-                var progressAsFloat = progress.toFloat()
-                var translatedProgress = progressAsFloat/100
+                val progressAsFloat = progress.toFloat()
+                val translatedProgress = progressAsFloat/100
                 viewModel!!.VM_Throttle = translatedProgress
             }
 
@@ -78,8 +75,8 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
 
     private fun resetConnectionData() {
         resetButton?.setOnClickListener {
-            ip?.setText("", TextView.BufferType.EDITABLE);
-            port?.setText("", TextView.BufferType.EDITABLE);
+            ip?.setText("", TextView.BufferType.EDITABLE)
+            port?.setText("", TextView.BufferType.EDITABLE)
         }
     }
 
@@ -96,7 +93,7 @@ class MainActivity : AppCompatActivity(), JoystickView.JoystickListener {
     }
 
     private fun startEngine(){
-        engine_start?.setOnClickListener{
+        engineStartButton?.setOnClickListener{
             viewModel?.VM_startEngine()
         }
     }

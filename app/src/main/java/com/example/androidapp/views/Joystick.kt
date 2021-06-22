@@ -33,9 +33,9 @@ class JoystickView : SurfaceView, SurfaceHolder.Callback, OnTouchListener {
         holder.addCallback(this)
         setOnTouchListener(this)
         if (context is JoystickListener) joystickCallback = context
-        this.setBackgroundColor(Color.TRANSPARENT);
-        this.setZOrderOnTop(true);
-        holder.setFormat(PixelFormat.TRANSPARENT);
+        this.setBackgroundColor(Color.TRANSPARENT)
+        this.setZOrderOnTop(true)
+        holder.setFormat(PixelFormat.TRANSPARENT)
     }
 
     constructor(context: Context?, attributes: AttributeSet?, style: Int) : super(
@@ -46,18 +46,18 @@ class JoystickView : SurfaceView, SurfaceHolder.Callback, OnTouchListener {
         holder.addCallback(this)
         setOnTouchListener(this)
         if (context is JoystickListener) joystickCallback = context
-        this.setBackgroundColor(Color.TRANSPARENT);
-        this.setZOrderOnTop(true);
-        holder.setFormat(PixelFormat.TRANSPARENT);
+        this.setBackgroundColor(Color.TRANSPARENT)
+        this.setZOrderOnTop(true)
+        holder.setFormat(PixelFormat.TRANSPARENT)
     }
 
     constructor(context: Context?, attributes: AttributeSet?) : super(context, attributes) {
         holder.addCallback(this)
         setOnTouchListener(this)
         if (context is JoystickListener) joystickCallback = context
-        this.setBackgroundColor(Color.TRANSPARENT);
-        this.setZOrderOnTop(true);
-        holder.setFormat(PixelFormat.TRANSPARENT);
+        this.setBackgroundColor(Color.TRANSPARENT)
+        this.setZOrderOnTop(true)
+        holder.setFormat(PixelFormat.TRANSPARENT)
     }
 
     private fun drawJoystick(newX: Float, newY: Float) {
@@ -120,7 +120,7 @@ class JoystickView : SurfaceView, SurfaceHolder.Callback, OnTouchListener {
 
                 // Joystick is in limits
                 if(displacement < outerRadius){
-                    joystickCallback?.onJoystickMoved((e.x - circleCenterXVal) / outerRadius, (e.y - circleCenterYVal) / outerRadius);
+                    joystickCallback?.onJoystickMoved((e.x - circleCenterXVal) / outerRadius, (e.y - circleCenterYVal) / outerRadius)
                     drawJoystick(e.x, e.y)
                 }
 
@@ -128,19 +128,19 @@ class JoystickView : SurfaceView, SurfaceHolder.Callback, OnTouchListener {
                 else{
                     // Calculate intersections between the line that represents the center of the circle and the point that the user touches
 
-                    var centerOfCircle = Point(circleCenterXVal.toDouble(), circleCenterYVal.toDouble())
-                    var radiusAsDouble = outerRadius.toDouble()
+                    val centerOfCircle = Point(circleCenterXVal.toDouble(), circleCenterYVal.toDouble())
+                    val radiusAsDouble = outerRadius.toDouble()
 
-                    var userPoint = Point((e.x).toDouble(), (e.y).toDouble())
+                    val userPoint = Point((e.x).toDouble(), (e.y).toDouble())
 
-                    var intersections = intersects(centerOfCircle, userPoint, centerOfCircle, radiusAsDouble, false)
-                    var deltaOne = sqrt((e.y - (intersections[0].y).toFloat()) * (e.y - (intersections[0].y).toFloat()) +
+                    val intersections = intersects(centerOfCircle, userPoint, centerOfCircle, radiusAsDouble, false)
+                    val deltaOne = sqrt((e.y - (intersections[0].y).toFloat()) * (e.y - (intersections[0].y).toFloat()) +
                             (e.x - (intersections[0].x).toFloat()) * (e.x - (intersections[0].x).toFloat()))
-                    var deltaTwo = sqrt((e.y - (intersections[1].y).toFloat()) * (e.y - (intersections[1].y).toFloat()) +
+                    val deltaTwo = sqrt((e.y - (intersections[1].y).toFloat()) * (e.y - (intersections[1].y).toFloat()) +
                             (e.x - (intersections[1].x).toFloat()) * (e.x - (intersections[1].x).toFloat()))
 
-                    var constrainedX = 0f
-                    var constrainedY = 0f
+                    val constrainedX: Float
+                    val constrainedY: Float
 
                     // Find the closest intersection point to problematic point
                     if(deltaOne < deltaTwo){
@@ -153,18 +153,18 @@ class JoystickView : SurfaceView, SurfaceHolder.Callback, OnTouchListener {
                         constrainedY = (intersections[1].y).toFloat()
                     }
 
-                    joystickCallback?.onJoystickMoved((constrainedX - circleCenterXVal) / outerRadius, (constrainedY - circleCenterYVal) / outerRadius);
+                    joystickCallback?.onJoystickMoved((constrainedX - circleCenterXVal) / outerRadius, (constrainedY - circleCenterYVal) / outerRadius)
                     drawJoystick(constrainedX, constrainedY)
                 }
             }
 
             else{
-                joystickCallback?.onJoystickMoved(0f, 0f);
+                joystickCallback?.onJoystickMoved(0f, 0f)
                 drawJoystick(circleCenterXVal, circleCenterYVal)
             }
         }
 
-        return true;
+        return true
     }
 
     interface JoystickListener {

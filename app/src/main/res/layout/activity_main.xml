@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toTopOf="@id/port"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/port"
@@ -32,6 +33,7 @@
         app:layout_constraintBottom_toTopOf="@id/connect_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:inputType="textPersonName"
         app:layout_constraintTop_toBottomOf="@id/ip" />
 
 
@@ -59,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/connect_btn"
         app:layout_constraintTop_toBottomOf="@+id/port"
-        tools:ignore="MissingConstraints"
+        tools:ignore="HardcodedText,MissingConstraints"
         android:layout_marginStart="20dp" />
 
     <ImageButton
@@ -70,7 +72,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="40dp"
-        android:background="@drawable/engine_start">
+        android:background="@drawable/engine_start"
+        tools:ignore="ContentDescription">
     </ImageButton>
 
     <SeekBar
@@ -112,7 +115,8 @@
         android:layout_height="300dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="177dp">
+        tools:layout_editor_absoluteY="177dp"
+        android:layout_marginStart="30dp">
 
         <com.example.androidapp.views.JoystickView
             android:layout_width="match_parent"
