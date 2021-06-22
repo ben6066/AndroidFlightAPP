@@ -5,7 +5,7 @@ import java.net.Socket
 import java.util.concurrent.BlockingQueue
 import java.util.concurrent.LinkedBlockingQueue
 
-class FGPlayer// okay, just terminate the dispatcher
+class FGPlayer
 {
     private var throttle: Float = 0f
     private var elevator: Float = 0f
