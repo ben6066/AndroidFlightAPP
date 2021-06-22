@@ -2,7 +2,6 @@ package com.example.androidapp.view_model
 
 import com.example.androidapp.model.FGPlayer
 
-// in java- FGPlayer Model
 class ViewModel {
     // private FGPlayer myModel = Model;
     private var myModel : FGPlayer? = null
