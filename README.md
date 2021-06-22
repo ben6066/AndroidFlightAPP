@@ -10,7 +10,7 @@ Those features invoke the airplane in the flight gear application.</br>
 1. Install the prerequisites
 2. Clone the project: ```git clone https://github.com/ben6066/AndroidFlightAPP.git```
 3. Open CMD/BASH and type ```ipconfig``` in order to find out your IPv4 address.
-4. Open the Flightgear and go to settings, scroll to the end of the page and write this line:
+4. Open the Flightgear and go to settings, scroll to the end of the page and write this line:</br>
 ```--telnet=socket,in,10,127.0.0.1,6400,tcp```
 
 ## Running the application and connecting to the FlightGear
@@ -28,7 +28,7 @@ You can start playing with the throttle and the rudder in order to start moving 
 
 ### Project Structure
 <p align="center">
-<img src = "https://user-images.githubusercontent.com/56928005/122680158-8f397700-d1f6-11eb-9b03-c22ea3bd5467.PNG">
+<img src = "https://user-images.githubusercontent.com/56928005/122941006-a656a100-d37d-11eb-8160-6a328a1c4d27.PNG">
 </p>
 
 ## [Explanation Video](https://www.youtube.com/watch?v=lTd08uuWFZ8)
