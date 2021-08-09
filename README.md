@@ -1,5 +1,5 @@
 # AndroidFlightAPP
-An android application that connects to a flight simulator and provides a joystick and 2 seek bars representing the throttle and rudder.</br>
+An android application that connects to the flight simulator and provides a joystick and 2 seek bars representing the throttle and rudder.</br>
 Those features invoke the airplane in the flight gear application.</br>
 
 ## Prerequisites
